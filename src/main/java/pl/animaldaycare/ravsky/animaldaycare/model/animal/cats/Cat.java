@@ -4,7 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
-import pl.animaldaycare.ravsky.animaldaycare.enums.DogBreedEnum;
+import pl.animaldaycare.ravsky.animaldaycare.enums.CatBreedEnum;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.cats.CatResponse;
@@ -15,7 +15,7 @@ import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.cats.CatRespo
 public class Cat extends Animal {
 
     @Column
-    DogBreedEnum catBreed;
+    CatBreedEnum catBreed;
 
     @Column
     String specialNeeds;
@@ -26,7 +26,7 @@ public class Cat extends Animal {
         response.setAge(cat.getAge());
         response.setSize(cat.getSize());
         response.setName(cat.getName());
-        response.setDogBreed(cat.getCatBreed());
+        response.setCatBreed(cat.getCatBreed());
         response.setSpecialNeeds(cat.getSpecialNeeds());
         return response;
     }

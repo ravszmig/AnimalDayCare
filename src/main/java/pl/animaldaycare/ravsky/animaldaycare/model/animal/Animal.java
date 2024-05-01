@@ -2,6 +2,7 @@ package pl.animaldaycare.ravsky.animaldaycare.model.animal;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.AnimalSizeEnum;
 import pl.animaldaycare.ravsky.animaldaycare.enums.AnimalTypeEnum;
@@ -17,15 +18,19 @@ public abstract class Animal {
     Long id;
 
     @Column
+    @NonNull
     int age;
 
     @Column
+    @NonNull
     String name;
 
     @Column
+    @NonNull
     AnimalSizeEnum size;
 
     @Column
+    @NonNull
     AnimalTypeEnum animalType;
 
     public abstract AnimalResponse mapToObj(Animal animal);

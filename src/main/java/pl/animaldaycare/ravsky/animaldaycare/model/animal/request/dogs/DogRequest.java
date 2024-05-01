@@ -22,6 +22,7 @@ public class DogRequest extends AnimalRequest {
         dog.setSize(dogRequest.getSize());
         dog.setDogBreed(dogRequest.getDogBreed());
         dog.setSpecialNeeds(dogRequest.getSpecialNeeds());
+        dog.setAnimalType(dogRequest.getAnimalType());
         return dog;
     }
 }

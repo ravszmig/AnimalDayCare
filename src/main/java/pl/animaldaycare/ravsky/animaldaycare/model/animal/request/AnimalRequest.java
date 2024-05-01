@@ -1,8 +1,8 @@
 package pl.animaldaycare.ravsky.animaldaycare.model.animal.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.AnimalSizeEnum;
@@ -13,12 +13,11 @@ import pl.animaldaycare.ravsky.animaldaycare.model.animal.request.dogs.DogReques
 
 @Getter
 @Setter
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXTERNAL_PROPERTY, property = "animalType")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "animalType", visible = true)
 @JsonSubTypes({
         @JsonSubTypes.Type(value = DogRequest.class, name = "DOG"),
         @JsonSubTypes.Type(value = CatRequest.class, name = "CAT")
 })
-@JsonSerialize
 public abstract class AnimalRequest {
     private int age;
     private String name;

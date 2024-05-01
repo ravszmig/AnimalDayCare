@@ -4,13 +4,12 @@ import org.springframework.stereotype.Service;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.request.AnimalRequest;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.dogs.DogResponse;
 import pl.animaldaycare.ravsky.animaldaycare.repository.AnimalRepository;
 
 @Service
 public class AnimalService {
 
-    private final AnimalRepository animalRepository; // Inject AnimalRepository
+    private final AnimalRepository animalRepository;
 
     public AnimalService(AnimalRepository animalRepository) {
         this.animalRepository = animalRepository;

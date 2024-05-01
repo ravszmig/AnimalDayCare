@@ -3,7 +3,7 @@ package pl.animaldaycare.ravsky.animaldaycare.model.animal.request.cats;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.Setter;
-import pl.animaldaycare.ravsky.animaldaycare.enums.DogBreedEnum;
+import pl.animaldaycare.ravsky.animaldaycare.enums.CatBreedEnum;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.cats.Cat;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.request.AnimalRequest;
@@ -12,7 +12,7 @@ import pl.animaldaycare.ravsky.animaldaycare.model.animal.request.AnimalRequest;
 @Setter
 @JsonSerialize
 public class CatRequest extends AnimalRequest {
-    private DogBreedEnum dogBreed;
+    private CatBreedEnum catBreed;
     private String specialNeeds;
 
     @Override
@@ -22,8 +22,9 @@ public class CatRequest extends AnimalRequest {
         cat.setAge(catRequest.getAge());
         cat.setName(catRequest.getName());
         cat.setSize(catRequest.getSize());
-        cat.setCatBreed(catRequest.getDogBreed());
+        cat.setCatBreed(catRequest.getCatBreed());
         cat.setSpecialNeeds(catRequest.getSpecialNeeds());
+        cat.setAnimalType(catRequest.getAnimalType());
         return cat;
     }
 }
