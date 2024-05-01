@@ -1,6 +1,5 @@
 package pl.animaldaycare.ravsky.animaldaycare.model.animal.request;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Getter;
