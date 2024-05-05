@@ -1,4 +1,4 @@
-package pl.animaldaycare.ravsky.animaldaycare.repository;
+package pl.animaldaycare.ravsky.animaldaycare.persistance;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;

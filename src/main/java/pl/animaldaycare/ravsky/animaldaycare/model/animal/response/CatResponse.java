@@ -1,10 +1,9 @@
-package pl.animaldaycare.ravsky.animaldaycare.model.animal.response.cats;
+package pl.animaldaycare.ravsky.animaldaycare.model.animal.response;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.CatBreedEnum;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
 
 @Getter
 @Setter

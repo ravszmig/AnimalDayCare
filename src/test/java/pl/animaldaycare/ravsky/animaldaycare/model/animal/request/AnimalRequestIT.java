@@ -12,8 +12,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import pl.animaldaycare.ravsky.animaldaycare.enums.AnimalSizeEnum;
 import pl.animaldaycare.ravsky.animaldaycare.enums.AnimalTypeEnum;
 import pl.animaldaycare.ravsky.animaldaycare.enums.DogBreedEnum;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.request.dogs.DogRequest;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.dogs.DogResponse;
+import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.DogResponse;
 import pl.animaldaycare.ravsky.animaldaycare.service.AnimalService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

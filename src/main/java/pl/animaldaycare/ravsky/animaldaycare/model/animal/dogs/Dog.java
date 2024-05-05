@@ -6,7 +6,7 @@ import lombok.*;
 import pl.animaldaycare.ravsky.animaldaycare.enums.DogBreedEnum;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.dogs.DogResponse;
+import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.DogResponse;
 
 @Entity
 @Getter

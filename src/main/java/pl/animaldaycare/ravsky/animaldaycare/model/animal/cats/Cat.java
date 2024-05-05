@@ -7,7 +7,7 @@ import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.CatBreedEnum;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.cats.CatResponse;
+import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.CatResponse;
 
 @Entity
 @Getter
