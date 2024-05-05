@@ -1,11 +1,10 @@
-package pl.animaldaycare.ravsky.animaldaycare.model.animal.cats;
+package pl.animaldaycare.ravsky.animaldaycare.model.animal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.CatBreedEnum;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.CatResponse;
 

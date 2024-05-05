@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.DogBreedEnum;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.dogs.Dog;
+import pl.animaldaycare.ravsky.animaldaycare.model.animal.Dog;
 
 @Getter
 @Setter

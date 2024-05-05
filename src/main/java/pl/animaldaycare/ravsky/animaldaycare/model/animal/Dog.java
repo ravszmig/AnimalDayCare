@@ -1,10 +1,9 @@
-package pl.animaldaycare.ravsky.animaldaycare.model.animal.dogs;
+package pl.animaldaycare.ravsky.animaldaycare.model.animal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.*;
 import pl.animaldaycare.ravsky.animaldaycare.enums.DogBreedEnum;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.DogResponse;
 
