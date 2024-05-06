@@ -3,16 +3,16 @@ package pl.animaldaycare.ravsky.animaldaycare.model.animal.mapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;
+import pl.animaldaycare.ravsky.animaldaycare.model.animal.Cat;
+import pl.animaldaycare.ravsky.animaldaycare.model.animal.Dog;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.request.AnimalRequest;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.CatResponse;
+import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.DogResponse;
 
 @Component
 public class AnimalMapperImpl implements AnimalMapper {
 
-    private static final String REQUEST = "Request";
     private final ModelMapper modelMapper;
 
     public AnimalMapperImpl() {
@@ -21,34 +21,19 @@ public class AnimalMapperImpl implements AnimalMapper {
 
     @Override
     public Animal map(AnimalRequest animalRequest) {
-        String className = animalRequest.getClass().getSimpleName().replace(REQUEST, "");
-        String animalClassName = "pl.animaldaycare.ravsky.animaldaycare.model.animal." + className;
-        try {
-            Class<?> animalClass = Class.forName(animalClassName);
-            Constructor<?> constructor = animalClass.getConstructor();
-            Animal animal = (Animal) constructor.newInstance();
-            modelMapper.map(animalRequest, animal);
-            return animal;
-        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
-            throw new IllegalArgumentException("Unsupported animal request type", e);
-        }
+        return switch (animalRequest.getAnimalType()) {
+            case DOG -> modelMapper.map(animalRequest, Dog.class);
+            case CAT -> modelMapper.map(animalRequest, Cat.class);
+            default -> throw new IllegalArgumentException("Invalid animal type");
+        };
     }
 
     @Override
     public AnimalResponse map(Animal animal) {
-        String className = animal.getClass().getSimpleName();
-        String responseClassName = className.endsWith(REQUEST) ?
-                "pl.animaldaycare.ravsky.animaldaycare.model.animal.response." + className.replace(REQUEST, "Response") :
-                "pl.animaldaycare.ravsky.animaldaycare.model.animal.response." + className + "Response";
-
-        try {
-            Class<?> responseClass = Class.forName(responseClassName);
-            Constructor<?> constructor = responseClass.getConstructor();
-            AnimalResponse response = (AnimalResponse) constructor.newInstance();
-            modelMapper.map(animal, response);
-            return response;
-        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
-            throw new IllegalArgumentException("Unsupported animal type", e);
-        }
+        return switch (animal.getAnimalType()) {
+            case DOG -> modelMapper.map(animal, DogResponse.class);
+            case CAT -> modelMapper.map(animal, CatResponse.class);
+            default -> throw new IllegalArgumentException("Invalid animal type");
+        };
     }
 }
