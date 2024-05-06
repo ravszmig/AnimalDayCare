@@ -2,10 +2,9 @@ package pl.animaldaycare.ravsky.animaldaycare.model.animal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.DogBreedEnum;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.DogResponse;
 
 @Entity
 @Getter
@@ -17,16 +16,4 @@ public class Dog extends Animal {
 
     @Column
     String specialNeeds;
-
-    public AnimalResponse mapToObj(Animal animal) {
-        var dog = (Dog) animal;
-        var response = new DogResponse();
-        response.setAge(dog.getAge());
-        response.setSize(dog.getSize());
-        response.setName(dog.getName());
-        response.setDogBreed(dog.getDogBreed());
-        response.setSpecialNeeds(dog.getSpecialNeeds());
-
-        return response;
-    }
 }

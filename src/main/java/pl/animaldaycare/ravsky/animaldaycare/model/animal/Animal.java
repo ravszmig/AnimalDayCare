@@ -6,7 +6,6 @@ import lombok.NonNull;
 import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.AnimalSizeEnum;
 import pl.animaldaycare.ravsky.animaldaycare.enums.AnimalTypeEnum;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -32,6 +31,4 @@ public abstract class Animal {
     @Column
     @NonNull
     AnimalTypeEnum animalType;
-
-    public abstract AnimalResponse mapToObj(Animal animal);
 }

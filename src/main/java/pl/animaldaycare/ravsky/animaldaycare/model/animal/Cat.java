@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.CatBreedEnum;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.AnimalResponse;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.response.CatResponse;
 
 @Entity
 @Getter
@@ -18,15 +16,4 @@ public class Cat extends Animal {
 
     @Column
     String specialNeeds;
-
-    public AnimalResponse mapToObj(Animal animal) {
-        var cat = (Cat) animal;
-        var response = new CatResponse();
-        response.setAge(cat.getAge());
-        response.setSize(cat.getSize());
-        response.setName(cat.getName());
-        response.setCatBreed(cat.getCatBreed());
-        response.setSpecialNeeds(cat.getSpecialNeeds());
-        return response;
-    }
 }

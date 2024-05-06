@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Getter;
 import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.enums.DogBreedEnum;
-import pl.animaldaycare.ravsky.animaldaycare.model.animal.Dog;
 
 @Getter
 @Setter
@@ -12,16 +11,4 @@ import pl.animaldaycare.ravsky.animaldaycare.model.animal.Dog;
 public class DogRequest extends AnimalRequest {
     private DogBreedEnum dogBreed;
     private String specialNeeds;
-
-    public Dog map(AnimalRequest animalRequest) {
-        var dogRequest = (DogRequest) animalRequest;
-        Dog dog = new Dog();
-        dog.setAge(dogRequest.getAge());
-        dog.setName(dogRequest.getName());
-        dog.setSize(dogRequest.getSize());
-        dog.setDogBreed(dogRequest.getDogBreed());
-        dog.setSpecialNeeds(dogRequest.getSpecialNeeds());
-        dog.setAnimalType(dogRequest.getAnimalType());
-        return dog;
-    }
 }
