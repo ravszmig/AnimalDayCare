@@ -12,7 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 @Component
 public class AnimalMapperImpl implements AnimalMapper {
 
-    private final static String REQUEST = "Request";
+    private static final String REQUEST = "Request";
     private final ModelMapper modelMapper;
 
     public AnimalMapperImpl() {
