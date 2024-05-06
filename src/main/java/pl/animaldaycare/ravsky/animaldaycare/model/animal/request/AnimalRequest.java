@@ -19,4 +19,5 @@ public abstract class AnimalRequest {
     private String name;
     private AnimalSizeEnum size;
     private AnimalTypeEnum animalType;
+    private Long ownerId;
 }

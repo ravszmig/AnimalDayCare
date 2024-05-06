@@ -14,4 +14,5 @@ public abstract class AnimalResponse {
     private String name;
     private AnimalSizeEnum size;
     private AnimalTypeEnum animalType;
+    private Long ownerId;
 }
