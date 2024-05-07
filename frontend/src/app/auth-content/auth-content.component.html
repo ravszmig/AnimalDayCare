@@ -1,19 +1,26 @@
-<!-- auth-content.component.html -->
+<!-- owner-response.component.html -->
 
-<div class="row justify-content-md-center">
+<div class="row justify-content-md-center" *ngIf="owner">
   <div class="col-4">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Backend response</h5>
+        <h5 class="card-title">Owner Response</h5>
         <p class="card-text">Content:</p>
         <ul>
-          <li>Name: {{ dog.name }}</li>
-          <li>Age: {{ dog.age }}</li>
-          <li>Size: {{ dog.size }}</li>
-          <li>Animal Type: {{ dog.animalType }}</li>
-          <li>Owner ID: {{ dog.ownerId }}</li>
-          <li>Dog Breed: {{ dog.dogBreed }}</li>
-          <li>Special Needs: {{ dog.specialNeeds }}</li>
+          <li>Name: {{ owner.name }}</li>
+          <li>ID: {{ owner.id }}</li>
+          <li>Animals:</li>
+          <ul>
+            <ng-container *ngFor="let animal of owner.animals">
+              <li>Name: {{ animal.name }}</li>
+              <li>Age: {{ animal.age }}</li>
+              <li>Size: {{ animal.size }}</li>
+              <li>Animal Type: {{ animal.animalType }}</li>
+              <li>Dog Breed: {{ animal.dogBreed }}</li>
+              <li>Cat Breed: {{ animal.catBreed }}</li>
+              <li>Special Needs: {{ animal.specialNeeds }}</li>
+            </ng-container>
+          </ul>
         </ul>
       </div>
     </div>

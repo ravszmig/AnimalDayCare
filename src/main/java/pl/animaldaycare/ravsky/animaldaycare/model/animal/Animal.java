@@ -1,5 +1,6 @@
 package pl.animaldaycare.ravsky.animaldaycare.model.animal;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NonNull;
@@ -35,5 +36,6 @@ public abstract class Animal {
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
+    @JsonIgnore
     private Owner owner;
 }

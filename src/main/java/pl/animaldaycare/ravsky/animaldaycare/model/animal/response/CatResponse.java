@@ -1,12 +1,12 @@
 package pl.animaldaycare.ravsky.animaldaycare.model.animal.response;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import pl.animaldaycare.ravsky.animaldaycare.enums.CatBreedEnum;
 
-@Getter
-@Setter
+@EqualsAndHashCode(callSuper=true)
+@Data
+@NoArgsConstructor
 @JsonSerialize
 public class CatResponse extends AnimalResponse {
     private CatBreedEnum catBreed;

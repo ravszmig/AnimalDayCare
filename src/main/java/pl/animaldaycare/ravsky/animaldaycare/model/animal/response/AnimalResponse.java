@@ -1,13 +1,13 @@
 package pl.animaldaycare.ravsky.animaldaycare.model.animal.response;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import pl.animaldaycare.ravsky.animaldaycare.enums.AnimalSizeEnum;
 import pl.animaldaycare.ravsky.animaldaycare.enums.AnimalTypeEnum;
 
-@Getter
-@Setter
+@EqualsAndHashCode
+@Data
 @JsonSerialize
 public abstract class AnimalResponse {
     private int age;

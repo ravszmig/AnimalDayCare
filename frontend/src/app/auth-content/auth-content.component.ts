@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AxiosService} from '../axios.service'
 import {NgForOf, CommonModule} from "@angular/common";
+import {Owner} from "../interfaces/owner.interface";
 
 
 @Component({
@@ -13,21 +14,20 @@ import {NgForOf, CommonModule} from "@angular/common";
   templateUrl: './auth-content.component.html',
   styleUrl: './auth-content.component.scss'
 })
-export class AuthContentComponent {
-  dog: any; // Change the type as per your data structure
+export class AuthContentComponent implements OnInit {
+  owner: Owner | undefined;
 
-  constructor(private axiosService: AxiosService) {
-  }
+  constructor(private axiosService: AxiosService) {}
 
   ngOnInit(): void {
     console.log("NG on INIT called");
     this.axiosService.request(
       "GET",
-      "/animals/get/1",
+      "/owners/get/1",
     ).then(
-      (response: { data: any }) => {
+      (response: any) => {
         if (response.data) {
-          this.dog = response.data;
+          this.owner = response.data;
         } else {
           console.error("No data received from the server.");
         }
