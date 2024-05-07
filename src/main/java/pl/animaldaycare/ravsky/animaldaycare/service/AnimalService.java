@@ -33,7 +33,7 @@ public class AnimalService {
     }
 
     public AnimalResponse getAnimal(Long id) {
-        var animal = animalRepository.findById(id).orElseThrow();
+        var animal = animalRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Animal not found"));
         return animalMapper.map(animal);
     }
 }

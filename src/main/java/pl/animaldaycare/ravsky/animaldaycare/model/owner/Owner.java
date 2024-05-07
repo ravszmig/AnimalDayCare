@@ -2,6 +2,7 @@ package pl.animaldaycare.ravsky.animaldaycare.model.owner;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 import pl.animaldaycare.ravsky.animaldaycare.model.animal.Animal;
 
@@ -17,6 +18,7 @@ public class Owner {
     private Long id;
 
     @Column
+    @NonNull
     private String name;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)

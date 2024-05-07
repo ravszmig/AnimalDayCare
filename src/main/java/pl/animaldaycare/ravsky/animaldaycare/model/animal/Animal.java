@@ -19,7 +19,7 @@ public abstract class Animal {
 
     @Column
     @NonNull
-    int age;
+    Integer age;
 
     @Column
     @NonNull
